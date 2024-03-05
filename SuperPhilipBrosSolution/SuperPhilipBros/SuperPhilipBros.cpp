@@ -1,13 +1,20 @@
-// SuperPhilipBros.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
-
-#include <iostream>
-
-int main()
-{
-    std::cout << "Hello World!\n";
+#include <SFML/Graphics.hpp>
+void main(int argc, char** argv[]) {
+	sf::RenderWindow window(sf::VideoMode(640, 480),
+		"First window!");
+	while (window.isOpen()) {
+		sf::Event event;
+		while (window.pollEvent(event)) {
+			if (event.type == sf::Event::Closed) {
+				// Close window button clicked.
+				window.close();
+			}
+		}
+		window.clear(sf::Color::Black);
+		// Draw here.
+		window.display();
+	}
 }
-
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
 
